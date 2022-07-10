@@ -1,2 +1,7 @@
-FROM alpine:3.13.2
-CMD ["echo", "Hello world!"]
+FROM node:14
+WORKDIR /project
+COPY package*.json ./
+RUN npm ci
+COPY . .
+EXPOSE 8081
+CMD [“node”, “index.js”]
