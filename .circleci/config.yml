@@ -3,7 +3,7 @@ version: 2.1
 executors:
   docker-publisher:
     environment:
-      IMAGE_TAG: <username>/helloworld:latest
+      IMAGE_TAG: shivani8793/helloworld:latest
     docker:
       - image: docker:stable
 
@@ -36,7 +36,7 @@ jobs:
       - run:
           name: Publish Docker image
           command: |
-            echo "${DOCKERHUB_PASS}" | docker login --username "${DOCKERHUB_USERNAME}" --password-stdin
+            echo "${DOCKERHUB_PASSWORD}" | docker login --username "${DOCKERHUB_USERNAME}" --password-stdin
             docker push "${IMAGE_TAG}"
 
 workflows:
