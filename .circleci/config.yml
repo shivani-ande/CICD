@@ -3,7 +3,7 @@ version: 2.1
 executors:
   docker-publisher:
     environment:
-      IMAGE_TAG: shivani8793/helloworld:latest
+      IMAGE_TAG: shivani8793/js_app:latest
     docker:
       - image: docker:stable
 
