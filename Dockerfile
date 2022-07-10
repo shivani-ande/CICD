@@ -1,7 +1,9 @@
-FROM node:14
-WORKDIR /project
+FROM node:12
+WORKDIR /usr/src/app
 COPY package*.json ./
-RUN npm ci
+RUN npm install
 COPY . .
 EXPOSE 8081
 CMD [“node”, “index.js”]
+
+
